@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('artnet out',{
+        category: 'output',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: ""},
+            address: {value: "127.0.0.1"},
+            port: {value: 6454},
+            size: {value: 512},
+            rate: {value: 40},
+            universe: {value: 0, validate:RED.validators.number()}
+        },
+        inputs:1,
+        outputs:0,
+        align: "right",
+        icon: "light.png",
+        label: function() {
+            return this.name || "artnet";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="artnet out">
+	<div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-bookmark"></i> Address</label>
+        <input type="text" id="node-input-address" placeholder="IP Address">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-tag"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-size"><i class="fa fa-tag"></i> Size</label>
+        <input type="text" id="node-input-size" placeholder="Data size">
+    </div>
+    <div class="form-row">
+        <label for="node-input-rate"><i class="fa fa-tag"></i> Rate</label>
+        <input type="text" id="node-input-rate" placeholder="Rate">
+    </div>
+     <div class="form-row">
+        <label for="node-input-universe"><i class="fa fa-tag"></i> Universe</label>
+        <input type="text" id="node-input-universe" placeholder="Universe">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="artnet out">
+    <p>artnet</p>
+</script>
